@@ -1,1 +1,1 @@
-# Solutions to tasks on ES6 data manipulation
+# ES6 data manipulations solutions(alx_software_engineering_program)
