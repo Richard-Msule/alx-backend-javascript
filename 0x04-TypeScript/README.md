@@ -1,1 +1,1 @@
-# Solutions to tasks on Typescript
+# to tasks on Typescript
