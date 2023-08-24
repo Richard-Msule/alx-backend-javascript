@@ -1,22 +1,32 @@
-const calculateNumber = require("./0-calcul.js");
-const assert = require('assert');
+const assert = require("assert");
+const { it, describe } = require("mocha");
+const calculateNumber = require("./0-calcul");
 
-describe('calculateNumber', () => {
-    it('rounding of a', () => {
-        assert.equal(calculateNumber(15.78, 2), 18);
-        assert.equal(calculateNumber(1.2, 0), 1);
-        assert.equal(calculateNumber(3.5, 2), 6);
-    });
+describe("calculateNumber()", function() {
 
-    it('rounding of b', () => {
-        assert.equal(calculateNumber(2, 15.78), 18);
-        assert.equal(calculateNumber(0, 1.2), 1);
-        assert.equal(calculateNumber(2, 3.5), 6);
+    it(`checking if numbers round`, function() {
+      const res = calculateNumber(1, 2);
+      assert.strictEqual(res, 3);
     });
+    it(`checking if numbers round`, function() {
+      const res = calculateNumber(1.4, 2.2);
+      assert.strictEqual(res, 3);
+    });
+    it(`checking if numbers round`, function() {
+      const res = calculateNumber(1.6, 2.7);
+      assert.strictEqual(res, 5);
+    });
+    it(`checking if numbers round`, function() {
+      const res = calculateNumber(0, 0);
+      assert.strictEqual(res, 0);
+    });
+    it(`checking if numbers round`, function() {
+      const res = calculateNumber(-1.6, -1.7);
+      assert.strictEqual(res, -4);
+    });
+    it(`checking if numbers round`, function() {
+      const res = calculateNumber(-1.4, -1.3);
+	assert.strictEqual(res, -2);
+    });
+});
 
-    it('suming of a and b', () => {
-        assert.equal(calculateNumber(15.78, 2.5), 19);
-        assert.equal(calculateNumber(1.2, 0.2), 1);
-        assert.equal(calculateNumber(3.5, 2.7), 7);
-    });
-})
